@@ -3,6 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Creazione personaggio</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
 
@@ -19,21 +20,34 @@
 					<td><br>
 					<td>Classe:</td>
 					<td><input type="text" name="classe" list="listclasse"
-						th:field="*{classe}"> <td> <br>
-   <datalist id="listclasse">
-						<option value="Guerriero ">
-						<option value="Mago">
-						<option value="Stregone">
-						<option value="Paladino">
-						<option value="Ladro">
-							</datalist>
+						th:field="*{classe}">					
+					<td><br> <datalist id="listclasse">
+							<option value="Guerriero ">
+							<option value="Mago">
+							<option value="Stregone">
+							<option value="Paladino">
+							<option value="Ladro">
+						</datalist>
 					<td>Sesso:</td>
-					<td><input type="radio" id="M" th:field="*{sesso}" />
+					<td><input type="radio" id="M" name="maschio"
+						th:field="*{sesso}" />
 					<td><label for="M">M</label><br>
-					<td><input type="radio" id="F" th:field="*{sesso}" />
+					<td><input type="radio" id="F" name="femmina"
+						th:field="*{sesso}" />
 					<td><label for="F">F</label><br>
 				<tr>
 					<td colspan="2"><button type="submit" value="clicca qui" />SALVA</td>
+
+
+					<tr>
+			<td colspan="2"><input type="button" value="Home" id="btnClear" onclick="clearSearch()" /></td>
+						<div align="center">
+							<script type="text/javascript">
+								function clearSearch() {
+									window.location.assign("///C:/Users/GianMario/Desktop/RPGworld/RPGworld/rpgworld/src/main/resources/templates/index.html#")
+								}
+							</script>
+						</div>
 			</table>
 
 
@@ -42,7 +56,7 @@
 
 	</div>
 
-
+ 
 
 
 
