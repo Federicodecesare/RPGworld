@@ -27,7 +27,12 @@ public class Personaggio {
 	private int attacco;
 	@Column(name="difesa")
 	private int difesa;
-	
+	@Column(name="sesso")
+	private String sesso;
+	@Column(name="livello")
+	private int livello;
+	@Column(name ="esperienza")
+	private int esperienza;
 	public Personaggio() {
 		// TODO Auto-generated constructor stub
 	}
@@ -72,6 +77,24 @@ public class Personaggio {
 	}
 	public void setDifesa(int difesa) {
 		this.difesa = difesa;
+	}
+	public String getSesso() {
+		return sesso;
+	}
+	public void setSesso(String sesso) {
+		this.sesso = sesso;
+	}
+	public int getLivello() {
+		return livello;
+	}
+	public void setLivello(int livello) {
+		this.livello = livello;
+	}
+	public int getEsperienza() {
+		return esperienza;
+	}
+	public void setEsperienza(int esperienza) {
+		this.esperienza = esperienza;
 	}
 	
 	
