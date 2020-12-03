@@ -1,6 +1,9 @@
 package it.begear.rpgworld.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,6 +24,13 @@ public class PersonaggioController {
 	public String viewHomePage() {
 		
 		return "index";
+	}
+	@RequestMapping("/lista")
+	public String showListPersonaggi(Model model, @Param("keyword") String keyword) {
+		List<Personaggio> personaggi= personaggioService.listAll(keyword);
+		model.addAttribute("listapersonaggio", personaggi);
+		model.addAttribute("keyword",keyword);
+		return"lista_personaggi";
 	}
 	@RequestMapping("/new")
 	public String  showNewPersonaggio(Model model) {

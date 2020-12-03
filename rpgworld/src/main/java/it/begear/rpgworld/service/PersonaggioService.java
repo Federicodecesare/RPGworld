@@ -3,10 +3,11 @@ package it.begear.rpgworld.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import it.begear.rpgworld.entity.Personaggio;
 import it.begear.rpgworld.repository.PersonaggioRepository;
-
+@Service
 public class PersonaggioService {
 
 	@Autowired
