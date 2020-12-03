@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista personaggi</title>
+</head>
+<body>
+
+	<h1>PERSONAGGI</h1>
+
+	<table border="2">
+		<thead>
+			<tr>
+				<th>ID Personaggio</th>
+				<th>Nome</th>
+				<th>Classe</th>
+				<th>Punti vita max</th>
+				<th>Punti vita</th>
+				<th>Attacco</th>
+				<th>Difesa</th>
+				<th>Sesso</th>
+				<th>Livello</th>
+				<th>Esperienza</th>
+			</tr>
+		</thead>
+
+		<tr th:each="personaggio : ${listpersonaggio}">
+			<td th:text="${personaggio.idpersonaggio}"></td>
+			<td th:text="${personaggio.nome}"></td>
+			<td th:text="${personaggio.classe}"></td>
+			<td th:text="${personaggio.puntivitamax}"></td>
+			<td th:text="${personaggio.puntivita}"></td>
+			<td th:text="${personaggio.attacco}"></td>
+			<td th:text="${personaggio.difesa}"></td>
+			<td th:text="${personaggio.sesso}"></td>
+			<td th:text="${personaggio.livello}"></td>
+			<td th:text="${personaggio.esperienza}"></td>
+			<td><a th:href="@{'/delete/' +${personaggio.id}}">Delete</a>
+		</tr>
+	</table>
+
+
+
+</body>
+</html>
