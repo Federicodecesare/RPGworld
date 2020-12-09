@@ -19,7 +19,10 @@ public class PersonaggioService {
 		}
 		return rep.findAll();
 	}
-
+	
+	public int massimoId() {
+		return rep.massimoId();
+	}
 	public void save(Personaggio personaggio) {
 		// controlli logici e applicativi
 

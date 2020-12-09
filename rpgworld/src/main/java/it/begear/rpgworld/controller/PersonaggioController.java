@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import it.begear.rpgworld.entity.Personaggio;
 import it.begear.rpgworld.service.PersonaggioService;
+import it.begear.rpgworld.utils.Metodivari;
 
 @Controller
 public class PersonaggioController {
@@ -51,4 +52,33 @@ public class PersonaggioController {
 		return "redirect:/";
 		
 	}
+	@RequestMapping("/battaglia/{id}")
+	public String Battaglia(@PathVariable(name = "id")int id,Model model) {
+		Personaggio p1 = personaggioService.get(id);
+		Personaggio p2 = personaggioService.get(Metodivari.valorerandom(id, personaggioService.massimoId()));
+		model.addAttribute("personaggio1", p1);
+		model.addAttribute("personaggio1", p2);
+		boolean a1=false,a2=false;
+		String choose=(String) model.getAttribute("scelta");
+		do {
+			model.addAttribute("personaggio1", p1);
+			model.addAttribute("personaggio1", p2);	
+		if(choose.equalsIgnoreCase("attacco")) {
+			p2.setPuntivita(Metodivari.danno(p1, p2,a2));
+			a2=false;
+			personaggioService.save(p2);
+		}else if(choose.equalsIgnoreCase("difesa")) {
+			a1=true;
+		}
+		int sceltara= Metodivari.sceltarandom();
+		if(sceltara==0) {
+			p1.setPuntivita(Metodivari.danno(p1, p2,a1));
+			a1=false;
+			personaggioService.save(p1);
+		}else if(sceltara==1) {
+			a2=true;
+		}
+		}while(p1.getPuntivita()!=0 && p2.getPuntivita()!=0); 
+		return "esito";
+}
 }
