@@ -24,10 +24,11 @@
 				<th>Sesso</th>
 				<th>Livello</th>
 				<th>Esperienza</th>
+				<th>Azione</th>
 			</tr>
 		</thead>
 
-		<tr th:each="personaggio : ${listpersonaggio}">
+		<tr th:each="personaggio : ${listapersonaggio}">
 			<td th:text="${personaggio.idpersonaggio}"></td>
 			<td th:text="${personaggio.nome}"></td>
 			<td th:text="${personaggio.classe}"></td>
@@ -38,7 +39,7 @@
 			<td th:text="${personaggio.sesso}"></td>
 			<td th:text="${personaggio.livello}"></td>
 			<td th:text="${personaggio.esperienza}"></td>
-			<td><a th:href="@{'/delete/' +${personaggio.id}}">Delete</a>
+			<td><a th:href="@{'/delete/' +${personaggio.idpersonaggio}}">Delete</a>
 		</tr>
 	</table>
 	<form action="/">
