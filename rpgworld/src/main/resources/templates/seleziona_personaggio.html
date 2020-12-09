@@ -3,7 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="/css/lista.css">
-<title>Lista personaggi</title>
+<title>Seleziona personaggio</title>
 
 </head>
 <body>
@@ -39,7 +39,7 @@
 			<td th:text="${personaggio.sesso}"></td>
 			<td th:text="${personaggio.livello}"></td>
 			<td th:text="${personaggio.esperienza}"></td>
-			<td><a th:href="@{'/delete/' +${personaggio.idpersonaggio}}">Delete</a>
+			<td><a th:href="@{'/battaglia/' +${personaggio.idpersonaggio}}">Battaglia</a>
 		</tr>
 	</table>
 	
