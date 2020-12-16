@@ -1,0 +1,20 @@
+#button {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	top: 400px;
+	left: 250px;
+}
+
+#bot {
+	background-color: Transparent;        /* colore di sfondo    */
+	border: 2px solid #FCA800;        /* bordo dell'elemento */
+	color: #fff;                      /* colore del testo    */
+	font-weight: bold;                /* testo in grassetto  */
+	padding: 0;                       /* padding             */
+	font-size: 30px;
+	font-family: Papyrus;
+	border-radius: 50%;
+	cursor:pointer;
+	overflow: hidden;
+}
