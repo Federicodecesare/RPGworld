@@ -5,22 +5,22 @@
 <title>Creazione personaggio</title>
 
 </head>
-<body>
+<body background="\image\creaz.jpg">
 
 	<div align="center">
 
-		<h1>Crea personaggio</h1>
+		<img src="\image\pers.png">
 		<form action="#" th:action="@{/save}" th:object="${personaggio}"
 			method="post">
 			<table border="0" cellpadding=10>
 				<tr>
 
-					<td>Nome:</td>
+					<td><img src="\image\nome2.png"></td>
 					<td><input type="text" th:field="*{nome}" />
 					<td><br>
-					<td>Classe:</td>
+					<td><img src="\image\classe2.png"></td>
 					<td><input type="text" name="classe" list="listclasse"
-						th:field="*{classe}">					
+						th:field="*{classe}">
 					<td><br> <datalist id="listclasse">
 							<option value="Guerriero ">
 							<option value="Mago">
@@ -28,7 +28,7 @@
 							<option value="Paladino">
 							<option value="Ladro">
 						</datalist>
-					<td>Sesso:</td>
+					<td><img src="\image\sesso2.png"></td>
 					<td><input type="radio" id="M" name="maschio" value="M"
 						th:field="*{sesso}" />
 					<td><label for="M">M</label><br>
@@ -37,10 +37,7 @@
 					<td><label for="F">F</label><br>
 				<tr>
 					<td colspan="2"><button type="submit" value="clicca qui" />SALVA</td>
-
-
-					<tr>
-			
+				<tr>
 			</table>
 
 
@@ -48,11 +45,6 @@
 		</form>
 
 	</div>
-
- 
-
-
-
 
 </body>
 </html>
