@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="/css/lista.css">
+<title>Lista personaggi</title>
+
+</head>
+<body background="\image\listap.jpg">
+	<div id="titolo">
+		<h1>PERSONAGGI</h1>
+	</div>
+
+	<table border="0">
+		<thead>
+			<tr>
+				<th>ID Personaggio</th>
+				<th>Nome</th>
+				<th>Classe</th>
+				<th>Punti vita max</th>
+				<th>Punti vita</th>
+				<th>Attacco</th>
+				<th>Difesa</th>
+				<th>Sesso</th>
+				<th>Livello</th>
+				<th>Esperienza</th>
+				<th>Azione</th>
+			</tr>
+		</thead>
+
+		<tr th:each="personaggio : ${listapersonaggio}">
+			<td th:text="${personaggio.idpersonaggio}"></td>
+			<td th:text="${personaggio.nome}"></td>
+			<td th:text="${personaggio.classe}"></td>
+			<td th:text="${personaggio.puntivitamax}"></td>
+			<td th:text="${personaggio.puntivita}"></td>
+			<td th:text="${personaggio.attacco}"></td>
+			<td th:text="${personaggio.difesa}"></td>
+			<td th:text="${personaggio.sesso}"></td>
+			<td th:text="${personaggio.livello}"></td>
+			<td th:text="${personaggio.esperienza}"></td>
+			<td><a th:href="@{'/battaglia/' +${personaggio.idpersonaggio}}"><center>
+						Seleziona
+					</center></a>
+		</tr>
+	</table>
+
+	<br>
+<div style= "text-align: center">
+	<form action="/">
+		<input type="image" name="type" value="1" src="\image\homepage.png" height="100"
+							width="100" />
+	</form>
+</div>
+</body>
+</html>

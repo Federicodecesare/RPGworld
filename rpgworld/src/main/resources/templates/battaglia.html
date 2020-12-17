@@ -5,9 +5,18 @@
 <title>Battaglia</title>
 </head>
 <body>
+ <script th:inline="javascript">
+ /*<![CDATA[*/
+ 
 
+ var p1 = /*[[${personaggio1}]]*/ 'p1';
+ var p2 = /*[[${personaggio2}]]*/ 'p1';
+
+/*]]>*/
+
+</script>
  <h1>BATTAGLIA</h1>
-
+<h1 id="nomep"> </h1>
 <form action="attacco">
 <input type="submit" value="Attacca"/>
 </form>
