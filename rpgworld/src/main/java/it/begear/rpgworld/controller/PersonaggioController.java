@@ -1,6 +1,7 @@
 package it.begear.rpgworld.controller;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -44,6 +45,20 @@ public class PersonaggioController {
 		personaggioService.save(personaggio);
 		return "redirect:/";
 	}
+	@RequestMapping(value ="/savep", method = RequestMethod.POST)
+	public String savePersonaggiop(@ModelAttribute("personaggio1") Personaggio  personaggio) {
+		personaggio.setEsperienza(personaggio.getEsperienza()+100);
+		personaggio.setPuntivita(personaggio.getPuntivitamax());
+		personaggioService.save(personaggio);
+		return "redirect:/";
+	}
+	@RequestMapping(value ="/saven", method = RequestMethod.POST)
+	public String savePersonaggion(@ModelAttribute("personaggio2") Personaggio  personaggio) {
+		personaggio.setEsperienza(personaggio.getEsperienza()+100);
+		personaggio.setPuntivita(personaggio.getPuntivitamax());
+		personaggioService.save(personaggio);
+		return "redirect:/";
+	}
 	@RequestMapping("/delete/{id}")
 	public String deletePersonaggio(@PathVariable(name ="id")int id)
 	{
@@ -62,10 +77,19 @@ public class PersonaggioController {
 	@RequestMapping("/battaglia/{id}")
 	public String Battaglia(@PathVariable(name = "id")int id,Model model) {
 		Personaggio p1 = personaggioService.get(id);
-		Personaggio p2 = personaggioService.get(Metodivari.valorerandom(id, personaggioService.massimoId()));
+		Personaggio p2 = personaggioService.get(valorerandom(id, personaggioService.massimoId()));
 		model.addAttribute("personaggio1", p1);
 		model.addAttribute("personaggio2", p2);
 		
 		return "battaglia";
 }
+	private int valorerandom(int ex,int max) {
+		Random random = new Random();
+		int val;
+		do {
+		val = random.nextInt(max);
+		System.out.println(val);
+		} while(ex==val && personaggioService.checkid(val)==0 );
+		return val;
+	}
 }
