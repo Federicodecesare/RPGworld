@@ -34,6 +34,10 @@ public class PersonaggioService {
 		return rep.findById(id).get();
 	}
 
+	
+	public int checkid(int id) {
+		return rep.checkid(id);
+	}
 	public void delete(Integer id) {
 		rep.deleteById(id);
 	}
