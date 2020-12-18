@@ -48,7 +48,12 @@
 			}
 
 			alert(p2.puntivita);
-
+			if(p1.puntivita<=0){
+				var mybtn1= document.getElementById("salvap2").click();
+			}
+			if(p2.puntivita<=0){
+				var mybtn1= document.getElementById("salvap").click();
+			}
 		}
 		function difesa() {
 			var mydiv = document.getElementById("combattimento");
@@ -80,9 +85,14 @@
 				mydiv.insertAdjacentHTML('beforeend', stringa);
 
 			}
-
+	
 			alert(p2.puntivita);
-
+			if(p1.puntivita<=0){
+				var mybtn1= document.getElementById("salvap2").click();
+			}
+			if(p2.puntivita<=0){
+				var mybtn1= document.getElementById("salvap").click();
+			}
 		}
 		/*]]>*/
 	</script>
@@ -107,15 +117,25 @@
 	<br>
 	<br>
 
-	<form action="/">
+	
+
+
+
+<form action="#" th:action="@{/savep}" th:object="${personaggio1}"
+			method="post">
+			<p hidden><button type="submit" id="salvap"/></p>
+			</form>
+			<form action="#" th:action="@{/saven}" th:object="${personaggio2}"
+			method="post">
+			<p hidden><button type="submit" id="salvap2"/></p>
+			</form>
+
+
+
+
+<form action="/">
 		<input type="submit" value="home">
 	</form>
-
-
-
-
-
-
 
 
 
