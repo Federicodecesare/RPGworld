@@ -6,105 +6,110 @@
 <title>Battaglia</title>
 </head>
 <body>
- <script th:inline="javascript">
- /*<![CDATA[*/
- 
+	<script th:inline="javascript">
+		/*<![CDATA[*/
 
- var p1 = /*[[${personaggio1}]]*/ 'p1';
- var p2 = /*[[${personaggio2}]]*/ 'p2';
+		var p1 = /*[[${personaggio1}]]*/'p1';
+		var p2 = /*[[${personaggio2}]]*/'p2';
 
- var p1vita= p1.vita;
- var p2vita= p2.vita;
-function attacco(){
-	var mydiv= document.getElementById("combattimento");
-	var  num=Math.floor(Math.random() * 2)
-	var stringa;
-	var danno;
-	if(num==0){
-		stringa="<br/>Turno di "+p1.nome+"<br/> -------------------<br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-		alert("difesa");
-		var difesa=p2.difesa*2;
-		stringa=p2.nome+" si difende <br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-		danno=(p1.attacco-difesa);
-		stringa=p2.nome+" subisce "+danno+" danni<br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-		p2.puntivita= (p2.puntivita)-(p1.attacco-difesa);
-		stringa= p2.nome +" ha "+p2.puntivita + " vita <br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-	}else{ 
-		alert("attacco");
-		stringa="<br/>Turno di "+p2.nome+"<br/> -------------------<br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-		danno =(p1.attacco-p2.difesa);
-		stringa=p2.nome+" subisce "+danno+" danni<br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-		p2.puntivita= (p2.puntivita)-(p1.attacco-p2.difesa);
-		stringa= p2.nome +" ha "+p2.puntivita + " vita <br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-		
-		
-	}
-	
-	alert(p2.puntivita);
-	
-	
-}
-function difesa(){
-	var mydiv= document.getElementById("combattimento");
-	var  num=Math.floor(Math.random() * 2)
-	var stringa;
-	var danno;
-	if(num==0){
-		alert("nemico attacca");
-		stringa="<br/>Turno di "+p1.nome+"<br/> -------------------<br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-		var difesa=p1.difesa*2;
-		stringa=p1.nome+" si difende <br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-		stringa="<br/>Turno di "+p2.nome+"<br/> -------------------<br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-		danno=(p2.attacco-difesa);
-		stringa=p1.nome+" subisce "+danno+" danni<br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-		p1.puntivita= (p1.puntivita)-(p2.attacco-difesa);
-		stringa= p1.nome +" ha "+p1.puntivita + " vita <br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-	}else{ 
-		stringa="Turno di "+p1.nome+"<br/> -------------------<br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-		stringa=p2.nome+" non attacca <br/>";
-		mydiv.insertAdjacentHTML('beforeend',stringa);
-		
-		
-	}
-	
-	alert(p2.puntivita);
-	
-	
-}
-/*]]>*/
+		var p1vita = p1.vita;
+		var p2vita = p2.vita;
+		function attacco() {
+			var mydiv = document.getElementById("combattimento");
+			var num = Math.floor(Math.random() * 2)
+			var stringa;
+			var danno;
+			if (num == 0) {
+				stringa = "<br/>Turno di " + p1.nome
+						+ "<br/> -------------------<br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+				alert("difesa");
+				var difesa = p2.difesa * 2;
+				stringa = p2.nome + " si difende <br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+				danno = (p1.attacco - difesa);
+				stringa = p2.nome + " subisce " + danno + " danni<br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+				p2.puntivita = (p2.puntivita) - (p1.attacco - difesa);
+				stringa = p2.nome + " ha " + p2.puntivita + " vita <br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+			} else {
+				alert("attacco");
+				stringa = "<br/>Turno di " + p2.nome
+						+ "<br/> -------------------<br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+				danno = (p1.attacco - p2.difesa);
+				stringa = p2.nome + " subisce " + danno + " danni<br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+				p2.puntivita = (p2.puntivita) - (p1.attacco - p2.difesa);
+				stringa = p2.nome + " ha " + p2.puntivita + " vita <br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
 
-</script>
- <h1>BATTAGLIA</h1>
-<h1><p id="nomep" th:text="${personaggio1.nome}"> </p></h1>
+			}
 
-<div id="combattimento">
+			alert(p2.puntivita);
 
-</div>
-<button onclick="attacco()"/>Attacco</button>
+		}
+		function difesa() {
+			var mydiv = document.getElementById("combattimento");
+			var num = Math.floor(Math.random() * 2)
+			var stringa;
+			var danno;
+			if (num == 0) {
+				alert("nemico attacca");
+				stringa = "<br/>Turno di " + p1.nome
+						+ "<br/> -------------------<br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+				var difesa = p1.difesa * 2;
+				stringa = p1.nome + " si difende <br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+				stringa = "<br/>Turno di " + p2.nome
+						+ "<br/> -------------------<br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+				danno = (p2.attacco - difesa);
+				stringa = p1.nome + " subisce " + danno + " danni<br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+				p1.puntivita = (p1.puntivita) - (p2.attacco - difesa);
+				stringa = p1.nome + " ha " + p1.puntivita + " vita <br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+			} else {
+				stringa = "Turno di " + p1.nome
+						+ "<br/> -------------------<br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+				stringa = p2.nome + " non attacca <br/>";
+				mydiv.insertAdjacentHTML('beforeend', stringa);
+
+			}
+
+			alert(p2.puntivita);
+
+		}
+		/*]]>*/
+	</script>
+	<h1>BATTAGLIA</h1>
+	<h1>
+		<p id="nomep" th:text="${personaggio1.nome}"></p>
+	</h1>
+
+	<div id="combattimento"></div>
+	<button onclick="attacco()" />
+	Attacco
+	</button>
 
 
-<br><br>
+	<br>
+	<br>
 
-<button onclick="difesa()"/>Difesa</button>
+	<button onclick="difesa()" />
+	Difesa
+	</button>
 
-<br><br>
+	<br>
+	<br>
 
-<form action="/">
-<input type="submit" value="home">
-</form>
+	<form action="/">
+		<input type="submit" value="home">
+	</form>
 
 
 

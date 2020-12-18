@@ -14,22 +14,20 @@
 	<table border="0">
 		<thead>
 			<tr>
-				<th>ID Personaggio</th>
-				<th>Nome</th>
-				<th>Classe</th>
-				<th>Punti vita max</th>
-				<th>Punti vita</th>
-				<th>Attacco</th>
-				<th>Difesa</th>
-				<th>Sesso</th>
-				<th>Livello</th>
-				<th>Esperienza</th>
-				<th>Azione</th>
+				<th><center><img src="\image\nome2.png" style="border: 0;" height="30"width="50"/></center></a></th>
+				<th><center><img src="\image\classe2.png" style="border: 0;" height="30"width="50"/></center></a></th>
+				<th><center><img src="\image\hpmax.png" style="border: 0;" height="30"width="50"/></center></a></th>
+				<th><center><img src="\image\hp.png" style="border: 0;" height="30"width="50"/></center></a></th>
+				<th><center><img src="\image\atk.png" style="border: 0;" height="30"width="50"/></center></a></th>
+				<th><center><img src="\image\dif.png" style="border: 0;" height="30"width="50"/></center></a></th>
+				<th><center><img src="\image\sesso2.png" style="border: 0;" height="30"width="50"/></center></a></th>
+				<th><center><img src="\image\lv.png" style="border: 0;" height="30"width="50"/></center></a></th>
+				<th><center><img src="\image\exp.png" style="border: 0;" height="30"width="50"/></center></a></th>
+				<th></th>
 			</tr>
 		</thead>
 
 		<tr th:each="personaggio : ${listapersonaggio}">
-			<td th:text="${personaggio.idpersonaggio}"></td>
 			<td th:text="${personaggio.nome}"></td>
 			<td th:text="${personaggio.classe}"></td>
 			<td th:text="${personaggio.puntivitamax}"></td>
@@ -40,17 +38,18 @@
 			<td th:text="${personaggio.livello}"></td>
 			<td th:text="${personaggio.esperienza}"></td>
 			<td><a th:href="@{'/battaglia/' +${personaggio.idpersonaggio}}"><center>
-						Seleziona
+						<img src="\image\sel.png" style="border: 0;" height="30"
+							width="30" alt="abc" />
 					</center></a>
 		</tr>
 	</table>
 
 	<br>
-<div style= "text-align: center">
-	<form action="/">
-		<input type="image" name="type" value="1" src="\image\homepage.png" height="100"
-							width="100" />
-	</form>
-</div>
+	<div style="text-align: center">
+		<form action="/">
+			<input type="image" name="type" value="1" src="\image\homepage.png"
+				height="100" width="100" />
+		</form>
+	</div>
 </body>
 </html>
