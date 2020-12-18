@@ -48,11 +48,11 @@
 			}
 
 			alert(p2.puntivita);
-			if(p1.puntivita<=0){
-				var mybtn1= document.getElementById("salvap2").click();
+			if (p1.puntivita <= 0) {
+				var mybtn1 = document.getElementById("salvap2").click();
 			}
-			if(p2.puntivita<=0){
-				var mybtn1= document.getElementById("salvap").click();
+			if (p2.puntivita <= 0) {
+				var mybtn1 = document.getElementById("salvap").click();
 			}
 		}
 		function difesa() {
@@ -85,55 +85,65 @@
 				mydiv.insertAdjacentHTML('beforeend', stringa);
 
 			}
-	
+
 			alert(p2.puntivita);
-			if(p1.puntivita<=0){
-				var mybtn1= document.getElementById("salvap2").click();
+			if (p1.puntivita <= 0) {
+				var mybtn1 = document.getElementById("salvap2").click();
 			}
-			if(p2.puntivita<=0){
-				var mybtn1= document.getElementById("salvap").click();
+			if (p2.puntivita <= 0) {
+				var mybtn1 = document.getElementById("salvap").click();
 			}
 		}
 		/*]]>*/
 	</script>
-	<center><img src="\image\battaglia.png" style="border: 0;" height="100"width="400"/></center>
-	<h1>
-		<p id="nomep" th:text="${personaggio1.nome}"></p>
-	</h1>
+	<center>
+		<img src="\image\battaglia.png" style="border: 0;" height="100"
+			width="400" />
+	</center>
 
-	<div id="combattimento"></div>
-	<button onclick="attacco()" />
-	Attacco
-	</button>
-
-
-	<br>
-	<br>
-
-	<button onclick="difesa()" />
-	Difesa
-	</button>
-
-	<br>
-	<br>
-
+	<div style="text-align: center;">
+		<img src="\image\vs.gif" style="border: 0;" height="400" width="400" />
+	</div>
 	
+	<div id="combattimento"></div>
+	
+	<div style="text-align: center;">
+		<h1 style="color: orange; font-family: Papyrus;">
+			<p id="nomep" th:text="${personaggio1.nome}"></p>
+		</h1>
+
+		<button onclick="attacco()" />
+		<img src="\image\spada.png" style="border: 0;" height="100"
+			width="100" />
+
+		<button onclick="difesa()" />
+		<img src="\image\scudo.png" style="border: 0;" height="100"
+			width="100" />
+		</button>
+	</div>
 
 
 
-<form action="#" th:action="@{/savep}" th:object="${personaggio1}"
-			method="post">
-			<p hidden><button type="submit" id="salvap"/></p>
-			</form>
-			<form action="#" th:action="@{/saven}" th:object="${personaggio2}"
-			method="post">
-			<p hidden><button type="submit" id="salvap2"/></p>
-			</form>
+
+
+
+	<form action="#" th:action="@{/savep}" th:object="${personaggio1}"
+		method="post">
+		<p hidden>
+			<button type="submit" id="salvap" />
+		</p>
+	</form>
+	<form action="#" th:action="@{/saven}" th:object="${personaggio2}"
+		method="post">
+		<p hidden>
+			<button type="submit" id="salvap2" />
+		</p>
+	</form>
 
 
 
 
-<form action="/">
+	<form action="/">
 		<input type="submit" value="home">
 	</form>
 
