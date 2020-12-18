@@ -10,6 +10,7 @@ public class Metodivari {
 		int val;
 		do {
 		val = random.nextInt(max);
+		System.out.println(val);
 		} while(ex!=val);
 		return val;
 	}
