@@ -1,0 +1,39 @@
+#guerriero {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	top: 400px;
+	left: 100px;
+}
+
+#stregone {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	top: 400px;
+	left: 450px;
+}
+
+#paladino {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	top: 400px;
+	left: 800px;
+}
+
+#mago {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	top: 400px;
+	left: 1150px;
+}
+
+#ladro {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	top: 400px;
+	left: 1450px;
+}
