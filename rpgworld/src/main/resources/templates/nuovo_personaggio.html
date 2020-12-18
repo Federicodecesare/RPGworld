@@ -2,25 +2,26 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="/css/crea.css">
 <title>Creazione personaggio</title>
 
 </head>
-<body>
+<body background="\image\creaz.jpg">
 
 	<div align="center">
 
-		<h1>Crea personaggio</h1>
+		<img src="\image\pers.png">
 		<form action="#" th:action="@{/save}" th:object="${personaggio}"
 			method="post">
 			<table border="0" cellpadding=10>
 				<tr>
 
-					<td>Nome:</td>
+					<td><img src="\image\nome2.png"></td>
 					<td><input type="text" th:field="*{nome}" />
 					<td><br>
-					<td>Classe:</td>
+					<td><img src="\image\classe2.png"></td>
 					<td><input type="text" name="classe" list="listclasse"
-						th:field="*{classe}">					
+						th:field="*{classe}">
 					<td><br> <datalist id="listclasse">
 							<option value="Guerriero ">
 							<option value="Mago">
@@ -28,31 +29,42 @@
 							<option value="Paladino">
 							<option value="Ladro">
 						</datalist>
-					<td>Sesso:</td>
+					<td><img src="\image\sesso2.png"></td>
 					<td><input type="radio" id="M" name="maschio" value="M"
 						th:field="*{sesso}" />
-					<td><label for="M">M</label><br>
+					<td><label for="M"><img src="\image\man.png"
+							width="30" height="30"></label><br>
 					<td><input type="radio" id="F" name="femmina" value="F"
 						th:field="*{sesso}" />
-					<td><label for="F">F</label><br>
-				<tr>
-					<td colspan="2"><button type="submit" value="clicca qui" />SALVA</td>
-
-
-					<tr>
-			
+					<td><label for="F"><img src="\image\woman.png"
+							width="30" height="30"></label><br>
+					<td colspan="2"><button type="submit" value="clicca qui" />
+						<img src="\image\salva.png" width="35" height="35"></td>
 			</table>
-
-
-
 		</form>
-
 	</div>
-
- 
-
-
-
+	
+		<div id="guerriero">
+			<img src="\image\guerriero.png" width="250" height="500">
+			<p style="text-align: center; color:orange; font-family: Papyrus;">Guerrieri non servono abilita' speciali: la loro immensa forza, la loro resistenza alle ferite, le potenti armature, il gran numero di armi in loro possesso e la loro bravura nell'utilizzarle, ne fanno gia' di per se' un'imponente macchina da guerra. Non hanno bisogno di altro.</p>
+		</div>
+		<div id="stregone">
+			<img src="\image\stregone.png" width="250" height="500">
+			<p style="text-align: center; color:orange; font-family: Papyrus;">Il mago e' abilissimo nel plasmare le energie magiche e rilasciarle sotto forma di incantesimi. Per farlo, studia strane lingue e scienze oscure, e dedica molto del suo tempo alla ricerca in campo magico. Un mago che voglia sopravvivere deve fare affidamento sul proprio ingegno e sulle conoscenze.</p>
+		</div>
+		<div id="paladino">
+			<img src="\image\paladino.png" width="250" height="500">
+			<p style="text-align: center; color:orange; font-family: Papyrus;">I Paladini sono monaci-guerrieri, per lo piu' votati al Bene, con una fede molto profonda in un dio. Rappresentano campioni di fede, consacrati anima e corpo alla disciplina della divinita' che seguono. Esempi storici possono essere i Templari e tutti gli altri ordini cavallereschi divenuti leggendari.</p>
+		</div>
+		<div id="mago">
+			<img src="\image\mago.png" width="250" height="500">
+			<p style="text-align: center; color:orange; font-family: Papyrus;">Gli stregoni sono incantatori arcani in grado di creare magia attingendo direttamente dal potere innato che li contraddistingue dai maghi: al contrario di questi infatti, gli stregoni non hanno libri, ne' insegnanti, ne' hanno dovuto studiare per anni i testi di magia antica.</p>
+		</div>
+		<div id="ladro">
+			<img src="\image\thief.png" width="250" height="500">
+			<p style="text-align: center; color:orange; font-family: Papyrus;">Il ladro e' un furfante abilissimo nel raggiungere i propri scopi, nel bene e nel male. E' intelligente, agile e silenzioso. Deve solo scegliere se usare le proprie doti per truffare gli innocenti che incontra, i ricchi mercanti, oppure i mostri o gli oppressori.</p>
+		</div>
+	
 
 </body>
 </html>
