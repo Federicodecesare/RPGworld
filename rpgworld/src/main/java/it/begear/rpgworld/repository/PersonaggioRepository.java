@@ -13,6 +13,6 @@ public interface PersonaggioRepository extends JpaRepository<Personaggio, Intege
 	public List<Personaggio> search(String keyword);
 	@Query("Select MAX(p.idpersonaggio) FROM Personaggio p")
 	public int massimoId();
-	@Query("SELECT COUNT(p.idpersonaggio) FROM Personaggio p WHERE p.idpersonaggio=%?1%")
+	@Query("SELECT COUNT(p.idpersonaggio) FROM Personaggio p WHERE p.idpersonaggio= ?1")
 	public int checkid(int id);
 }

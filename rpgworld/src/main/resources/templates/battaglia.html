@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<link rel="stylesheet" type="text/css" href="/css/battaglia.css">
 <meta charset="ISO-8859-1">
 <title>Battaglia</title>
 </head>
@@ -105,13 +105,13 @@
 		<img src="\image\vs.gif" style="border: 0;" height="400" width="400" />
 	</div>
 	
-	<div id="combattimento"></div>
+	
 	
 	<div style="text-align: center;">
 		<h1 style="color: orange; font-family: Papyrus;">
 			<p id="nomep" th:text="${personaggio1.nome}"></p>
 		</h1>
-
+	<div id="combattimento" overflow ></div>
 		<button onclick="attacco()" />
 		<img src="\image\spada.png" style="border: 0;" height="100"
 			width="100" />

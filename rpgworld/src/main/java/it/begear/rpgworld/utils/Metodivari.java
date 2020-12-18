@@ -15,7 +15,7 @@ public class Metodivari {
 		do {
 		val = random.nextInt(max);
 		System.out.println(val);
-		} while(ex!=val && );
+		} while(ex!=val);
 		return val;
 	}
 	public static int sceltarandom() {

@@ -87,9 +87,11 @@ public class PersonaggioController {
 		Random random = new Random();
 		int val;
 		do {
+			do {
 		val = random.nextInt(max);
+			}while(personaggioService.checkid(val)==0);
 		System.out.println(val);
-		} while(ex==val && personaggioService.checkid(val)==0 );
+		} while(ex==val);
 		return val;
 	}
 }
