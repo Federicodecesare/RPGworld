@@ -104,14 +104,14 @@
 	<div style="text-align: center;">
 		<img src="\image\vs.gif" style="border: 0;" height="400" width="400" />
 	</div>
-	
-	
-	
+
+	<div id="combattimento" overflow></div>
+
 	<div style="text-align: center;">
 		<h1 style="color: orange; font-family: Papyrus;">
 			<p id="nomep" th:text="${personaggio1.nome}"></p>
 		</h1>
-	<div id="combattimento" overflow ></div>
+
 		<button onclick="attacco()" />
 		<img src="\image\spada.png" style="border: 0;" height="100"
 			width="100" />
@@ -121,11 +121,6 @@
 			width="100" />
 		</button>
 	</div>
-
-
-
-
-
 
 	<form action="#" th:action="@{/savep}" th:object="${personaggio1}"
 		method="post">
@@ -140,14 +135,9 @@
 		</p>
 	</form>
 
-
-
-
 	<form action="/">
 		<input type="submit" value="home">
 	</form>
-
-
 
 </body>
 </html>

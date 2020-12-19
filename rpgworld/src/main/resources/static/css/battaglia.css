@@ -1,8 +1,28 @@
-#combattimento{
-	overflow-y : scroll;
-	color: white;
-	 height: 200px;
-  	width: 200px;
-  	 margin: auto;
-  	 padding: 20px;
+#combattimento {
+	overflow-y: scroll;
+	color: red;
+	height: 200px;
+	width: 200px;
+	margin: auto;
+	padding: 20px;
 }
+
+::-webkit-scrollbar {
+	width: 15px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: trasparent;
+} /* colore di sfondo delle scrollbar */
+::-webkit-scrollbar-thumb {
+	background-color: #3c3c3c;
+}
+
+::-webkit-scrollbar-button {
+	background-color: #3c3c3c;
+}
+	/* codice per personalizzare i bottoni alle estremità delle scrollbars */
+::-webkit-scrollbar-corner {
+	background-color: black;
+}
+	/* se sia il verticale e le barre orizzontali appaiono, probabilmente l'angolo in basso a destra ha anche bisogno di avere uno stile */
