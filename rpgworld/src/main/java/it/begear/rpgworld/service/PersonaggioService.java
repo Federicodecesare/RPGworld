@@ -42,8 +42,7 @@ public class PersonaggioService {
 		rep.deleteById(id);
 	}
 	public Personaggio modificaPersonaggio(Personaggio personaggio) {
-		personaggio.getClass();
-		switch (personaggio.getClasse()) {
+		switch (personaggio.getClasse().toLowerCase()) {
 		case "guerriero":
 			personaggio.setLivello(1);
 			personaggio.setAttacco(30);
@@ -72,7 +71,7 @@ public class PersonaggioService {
 			break;
 		case "paladino":
 			personaggio.setLivello(1);
-			personaggio.setAttacco(30);
+			personaggio.setAttacco(60);
 			personaggio.setPuntivita(100);
 			personaggio.setPuntivitamax(100);
 			personaggio.setDifesa(20);

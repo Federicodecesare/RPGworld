@@ -49,14 +49,14 @@ public class PersonaggioController {
 	public String savePersonaggiop(@ModelAttribute("personaggio1") Personaggio  personaggio) {
 		personaggio.setEsperienza(personaggio.getEsperienza()+100);
 		personaggio.setPuntivita(personaggio.getPuntivitamax());
-		personaggioService.save(personaggioService.livelloPersonaggi(personaggio));
+		personaggioService.save(personaggio);
 		return "redirect:/";
 	}
 	@RequestMapping(value ="/saven", method = RequestMethod.POST)
 	public String savePersonaggion(@ModelAttribute("personaggio2") Personaggio  personaggio) {
 		personaggio.setEsperienza(personaggio.getEsperienza()+100);
 		personaggio.setPuntivita(personaggio.getPuntivitamax());
-		personaggioService.save(personaggioService.livelloPersonaggi(personaggio));
+		personaggioService.save(personaggio);
 		return "redirect:/";
 	}
 	@RequestMapping("/delete/{id}")
