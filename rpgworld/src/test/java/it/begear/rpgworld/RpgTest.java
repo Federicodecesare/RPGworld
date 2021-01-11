@@ -30,7 +30,7 @@ public class RpgTest {
 
     @Test
     void testGet() {
-        Personaggio personaggio = pr.getOne(1);
+        Personaggio personaggio = pr.getOne(38);
         Personaggio idpersonaggio = pr.getOne(personaggio.getIdpersonaggio());
         assertEquals(personaggio.getNome(), idpersonaggio.getNome());
 
@@ -38,7 +38,7 @@ public class RpgTest {
 
     @Test
     void testDelete() {
-        Integer id = 1;
+        Integer id = 38;
         boolean isExistsBeforeDelete = pr.findById(id).isPresent();
         pr.deleteById(id);
         boolean isExistsAfterDelete = pr.findById(id).isPresent();
