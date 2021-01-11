@@ -45,44 +45,44 @@ public class PersonaggioService {
 		switch (personaggio.getClasse().toLowerCase()) {
 		case "guerriero":
 			personaggio.setLivello(1);
-			personaggio.setAttacco(30);
-			personaggio.setPuntivita(100);
-			personaggio.setPuntivitamax(100);
-			personaggio.setDifesa(20);
+			personaggio.setAttacco((int) (Math.random()*100));
+			personaggio.setPuntivita((int) (Math.random()*200));
+			personaggio.setPuntivitamax((int) (Math.random()*200));
+			personaggio.setDifesa((int) (Math.random()*100));
 			
 			
 			break;
 
 		case "mago":
 			personaggio.setLivello(1);
-			personaggio.setAttacco(30);
-			personaggio.setPuntivita(100);
-			personaggio.setPuntivitamax(100);
-			personaggio.setDifesa(20);
+			personaggio.setAttacco((int) (Math.random()*100));
+			personaggio.setPuntivita((int) (Math.random()*200));
+			personaggio.setPuntivitamax((int) (Math.random()*200));
+			personaggio.setDifesa((int) (Math.random()*100));
 			
 			break;
 		case "stregone":
 			personaggio.setLivello(1);
-			personaggio.setAttacco(30);
-			personaggio.setPuntivita(100);
-			personaggio.setPuntivitamax(100);
-			personaggio.setDifesa(20);
+			personaggio.setAttacco((int) (Math.random()*100));
+			personaggio.setPuntivita((int) (Math.random()*200));
+			personaggio.setPuntivitamax((int) (Math.random()*200));
+			personaggio.setDifesa((int) (Math.random()*100));
 			
 			break;
 		case "paladino":
 			personaggio.setLivello(1);
-			personaggio.setAttacco(60);
-			personaggio.setPuntivita(100);
-			personaggio.setPuntivitamax(100);
-			personaggio.setDifesa(20);
+			personaggio.setAttacco((int) (Math.random()*100));
+			personaggio.setPuntivita((int) (Math.random()*200));
+			personaggio.setPuntivitamax((int) (Math.random()*200));
+			personaggio.setDifesa((int) (Math.random()*100));
 			
 			break;
 		case "ladro":
 			personaggio.setLivello(1);
-			personaggio.setAttacco(30);
-			personaggio.setPuntivita(100);
-			personaggio.setPuntivitamax(100);
-			personaggio.setDifesa(20);
+			personaggio.setAttacco((int) (Math.random()*100));
+			personaggio.setPuntivita((int) (Math.random()*200));
+			personaggio.setPuntivitamax((int) (Math.random()*200));
+			personaggio.setDifesa((int) (Math.random()*100));
 			break;
 		}
 		
