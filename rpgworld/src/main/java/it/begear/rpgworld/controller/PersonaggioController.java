@@ -46,17 +46,19 @@ public class PersonaggioController {
 		return "redirect:/";
 	}
 	@RequestMapping(value ="/savep", method = RequestMethod.POST)
-	public String savePersonaggiop(@ModelAttribute("personaggio1") Personaggio  personaggio) {
+	public String savePersonaggiop(@ModelAttribute("perso1") Personaggio  personaggio) {
+		personaggio = personaggioService.get(personaggio.getIdpersonaggio());
 		personaggio.setEsperienza(personaggio.getEsperienza()+100);
 		personaggio.setPuntivita(personaggio.getPuntivitamax());
-		personaggioService.save(personaggio);
+		personaggioService.save(personaggioService.livelloPersonaggi(personaggio));
 		return "redirect:/";
 	}
 	@RequestMapping(value ="/saven", method = RequestMethod.POST)
-	public String savePersonaggion(@ModelAttribute("personaggio2") Personaggio  personaggio) {
+	public String savePersonaggion(@ModelAttribute("perso2") Personaggio  personaggio) {
+		personaggio = personaggioService.get(personaggio.getIdpersonaggio());
 		personaggio.setEsperienza(personaggio.getEsperienza()+100);
 		personaggio.setPuntivita(personaggio.getPuntivitamax());
-		personaggioService.save(personaggio);
+		personaggioService.save(personaggioService.livelloPersonaggi(personaggio));
 		return "redirect:/";
 	}
 	@RequestMapping("/delete/{id}")

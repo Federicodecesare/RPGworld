@@ -122,15 +122,17 @@
 		</button>
 	</div>
 
-	<form action="#" th:action="@{/savep}" th:object="${personaggio1}"
+	<form action="#" th:action="@{/savep}" th:object="${perso1}"
 		method="post">
 		<p hidden>
+		<input type="hidden" th:id="idpersonaggio" th:name="idpersonaggio"th:value="${personaggio1.idpersonaggio}" />
 			<button type="submit" id="salvap" />
 		</p>
 	</form>
-	<form action="#" th:action="@{/saven}" th:object="${personaggio2}"
+	<form action="#" th:action="@{/saven}" th:object="${perso2}"
 		method="post">
 		<p hidden>
+		<input type="hidden" th:id="idpersonaggio" th:name="idpersonaggio" th:value="${personaggio2.idpersonaggio}" />
 			<button type="submit" id="salvap2" />
 		</p>
 	</form>
